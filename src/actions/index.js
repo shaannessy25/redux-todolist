@@ -1,11 +1,20 @@
 const NEW_TODO = 'NEW_TODO'
 const DELETE_TODO = 'DELETE_TODO'
+const COMPLETE_TODO = 'COMPLETE_TODO'
 // Make a new Action to complete a todo item: COMPLETE_TODO
+
 
 const newTodo = (payload) => {
   return {
     type: NEW_TODO,
     payload
+  }
+}
+
+const completeTodo = (index) => {
+  return {
+    type: COMPLETE_TODO, 
+    payload: { index }
   }
 }
 
@@ -21,6 +30,8 @@ const deleteTodo = (index) => {
 export { 
   NEW_TODO, 
   newTodo,
+  COMPLETE_TODO,
+  completeTodo,
   DELETE_TODO,
   deleteTodo
   // Export the new action and creator
